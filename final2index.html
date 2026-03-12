@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Happy Birthday Prathikshya ❤️</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+text-align:center;
+background:#0b0b1a;
+color:white;
+overflow:hidden;
+}
+
+h1{
+margin-top:60px;
+font-size:45px;
+}
+
+button{
+padding:15px 30px;
+font-size:20px;
+border:none;
+border-radius:10px;
+background:#ff2e63;
+color:white;
+cursor:pointer;
+margin-top:20px;
+}
+
+.section{
+display:none;
+}
+
+.teddy{
+font-size:80px;
+margin-top:20px;
+}
+
+.balloon{
+position:fixed;
+bottom:-50px;
+font-size:30px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+100%{transform:translateY(-110vh)}
+}
+
+.firework{
+position:fixed;
+font-size:30px;
+animation:explode 1s ease-out;
+}
+
+@keyframes explode{
+0%{transform:scale(0)}
+100%{transform:scale(2);opacity:0}
+}
+
+.letter{
+font-size:120px;
+cursor:pointer;
+}
+
+</style>
+
+<script>
+
+function startFireworks(){
+
+for(let i=0;i<40;i++){
+
+let f=document.createElement("div")
+f.className="firework"
+f.innerHTML="✨"
+f.style.left=Math.random()*100+"vw"
+f.style.top=Math.random()*80+"vh"
+
+document.body.appendChild(f)
+
+setTimeout(()=>f.remove(),1000)
+
+}
+
+}
+
+function startBalloons(){
+
+setInterval(()=>{
+
+let b=document.createElement("div")
+b.className="balloon"
+b.innerHTML="❤️"
+
+b.style.left=Math.random()*100+"vw"
+
+document.body.appendChild(b)
+
+setTimeout(()=>b.remove(),6000)
+
+},400)
+
+}
+
+function next(id){
+
+document.querySelectorAll(".section").forEach(s=>s.style.display="none")
+document.getElementById(id).style.display="block"
+
+}
+
+function openLetter(){
+
+document.getElementById("loveText").style.display="block"
+
+}
+
+function yesAnswer(){
+
+next("yesPage")
+startFireworks()
+
+}
+
+function noAnswer(){
+
+next("noPage")
+startFireworks()
+
+}
+
+function startSite(){
+
+document.getElementById("start").style.display="block"
+startFireworks()
+startBalloons()
+
+}
+
+</script>
+
+</head>
+
+<body onload="startSite()">
+
+<h1>🎂 Happy 19th Birthday Prathikshya 🎂</h1>
+
+<div id="start" class="section">
+
+<div class="teddy">🧸</div>
+
+<p>Hi Prathikshya! I'm your birthday teddy bear.</p>
+
+<p>I have a small surprise someone made just for you.</p>
+
+<button onclick="next('story1')">Follow Me 💖</button>
+
+</div>
+
+<div id="story1" class="section">
+
+<div class="teddy">🧸</div>
+
+<p>I heard today is the birthday of someone very special.</p>
+
+<button onclick="next('story2')">Next</button>
+
+</div>
+
+<div id="story2" class="section">
+
+<div class="teddy">🧸</div>
+
+<p>Someone kind… beautiful… and amazing.</p>
+
+<button onclick="next('letterPage')">Next</button>
+
+</div>
+
+<div id="letterPage" class="section">
+
+<p>There is a letter waiting for you.</p>
+
+<div class="letter" onclick="openLetter()">💌</div>
+
+<p>Tap the letter to open it</p>
+
+<div id="loveText" style="display:none">
+
+<p>Dear Prathikshya,</p>
+
+<p>
+From the day you came into my life, things became brighter.
+Your smile and kindness make every moment better.
+</p>
+
+<p>
+You started as my best friend, but somewhere along the way
+you became someone very special to me.
+</p>
+
+<p>
+On your 19th birthday I just wanted to tell you honestly
+how I feel.
+</p>
+
+<p>
+You mean a lot to me ❤️
+</p>
+
+<button onclick="next('questionPage')">Continue</button>
+
+</div>
+
+</div>
+
+<div id="questionPage" class="section">
+
+<h2>One question for you...</h2>
+
+<p>Prathikshya… will you be my girlfriend? ❤️</p>
+
+<button onclick="yesAnswer()">YES 💖</button>
+
+<button onclick="noAnswer()">NO 🙂</button>
+
+</div>
+
+<div id="yesPage" class="section">
+
+<h1>🎉 She Said YES! 🎉</h1>
+
+<p>Congratulations Queen 👑</p>
+
+<p>
+Today is already your birthday,
+but you just made it the happiest day for me too.
+</p>
+
+<p>
+Thank you for being you ❤️
+</p>
+
+</div>
+
+<div id="noPage" class="section">
+
+<h1>❤️ I Respect Your Feelings</h1>
+
+<p>
+No matter what, I'm really grateful to have you in my life.
+</p>
+
+<p>
+And once again… Happy Birthday Prathikshya 🎂
+</p>
+
+</div>
+
+</body>
+</html>
